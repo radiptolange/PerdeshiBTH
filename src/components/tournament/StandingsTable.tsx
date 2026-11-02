@@ -147,3 +147,4 @@ export function StandingsTable({ standings, title = 'Tournament Standings' }: St
     </div>
   );
 }
+

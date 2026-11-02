@@ -28,3 +28,4 @@
 | **Real-time** | Live Score & Updates | Dynamic polling with event callbacks, optimistic UI updates | Planned (Phase 7) |
 | **Audit & Logs** | Administrative Audit Trail| Log of every bracket generation, score approval, and manual change | Planned (Phase 6) |
 | **Public Portal**| Tournament Hub | Public bracket exploration, participant rosters, match schedules | Planned (Phase 7) |
+

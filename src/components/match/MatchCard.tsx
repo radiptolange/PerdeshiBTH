@@ -145,3 +145,4 @@ export function MatchCard({ match, onClick, compact = false }: MatchCardProps) {
     </div>
   );
 }
+

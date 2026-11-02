@@ -108,3 +108,4 @@
 - `PATCH /api/notifications/[id]/read`
 - `GET /api/audit-logs`
   - Query: `?entity_type=match&entity_id=BTH-NCC-2026-R01-M001`
+

@@ -631,3 +631,4 @@ transaction(() => {
 });
 
 console.log('✅ BTH Esports Database successfully seeded with 4 full tournaments, 8 clans, rosters, live matches & standings!');
+

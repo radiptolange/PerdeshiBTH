@@ -37,3 +37,4 @@ export interface Organization {
   social_links: Record<string, string>;
   created_at: string;
 }
+

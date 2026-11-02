@@ -210,3 +210,4 @@
 - `link_url` (TEXT)
 - `is_read` (INTEGER DEFAULT 0)
 - `created_at` (TEXT NOT NULL)
+

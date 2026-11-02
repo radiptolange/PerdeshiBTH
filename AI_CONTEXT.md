@@ -53,3 +53,4 @@ PerdeshiBTH/
 2. **Never break existing features**: Keep the build green (`npm run build`) and test suites passing (`npm run test:engine`).
 3. **Keep the tournament engine functional**: The math in `src/engine/` must remain pure functions that return clean data structures without side effects.
 4. **Timezone awareness**: Store UTC in database, format to `Asia/Kathmandu` for display.
+

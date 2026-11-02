@@ -37,3 +37,4 @@
 ## ADR-005: Server-Authoritative Nepal Time (`Asia/Kathmandu`)
 - **Context**: BTH Esports operates primarily in Nepal (`UTC+05:45`). Matches, deadlines, and registration windows must align with Nepal Standard Time while allowing users in other regions to see converted times.
 - **Decision**: Store all timestamps in ISO 8601 UTC in the database, with server-side validation and client-side presentation defaulting to `Asia/Kathmandu` with explicit timezone labeling.
+

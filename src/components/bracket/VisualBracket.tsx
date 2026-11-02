@@ -218,3 +218,4 @@ export function VisualBracket({ matches, onRefresh }: VisualBracketProps) {
     </div>
   );
 }
+

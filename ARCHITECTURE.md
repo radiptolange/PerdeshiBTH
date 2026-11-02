@@ -92,3 +92,4 @@
   - `MatchCard.tsx`: Compact esports match card with team logos, scores, status indicator, and match ID.
   - `MatchDetailModal.tsx`: Comprehensive modal showing room credentials, assigned referee, substitution history, evidence screenshot viewer, and score dispute panel.
   - `SubstitutionModal.tsx`: Mid-match player replacement request form with eligibility checks.
+

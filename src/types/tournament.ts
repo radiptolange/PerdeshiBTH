@@ -96,3 +96,4 @@ export interface StandingRow {
   rank: number;
   form: ('W' | 'D' | 'L')[];
 }
+

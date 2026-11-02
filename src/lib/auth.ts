@@ -38,3 +38,4 @@ export function getCurrentUser(tokenOrHeader?: string): User | null {
 export function checkRole(userRole: UserRole, requiredRole: UserRole): boolean {
   return hasPermission(userRole, requiredRole);
 }
+

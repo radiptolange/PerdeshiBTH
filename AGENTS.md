@@ -99,3 +99,4 @@ Before wrapping up your response or passing work to another AI:
 2. Run test suites.
 3. Update `IMPLEMENTATION_STATUS.md`.
 4. Summarize exactly what was completed and what the next agent should tackle.
+

@@ -102,3 +102,4 @@ Key principles:
 - **Desktop (1024px+)**:
   - Full multi-column admin dashboard with real-time stats overview.
   - Complete bracket visualization with zoom & fullscreen toggle.
+

@@ -245,3 +245,4 @@ CREATE INDEX IF NOT EXISTS idx_participants_tournament ON tournament_participant
 CREATE INDEX IF NOT EXISTS idx_standings_tournament ON tournament_standings(tournament_id);
 CREATE INDEX IF NOT EXISTS idx_notifications_user ON notifications(user_id, is_read);
 CREATE INDEX IF NOT EXISTS idx_audit_entity ON audit_logs(entity_type, entity_id);
+

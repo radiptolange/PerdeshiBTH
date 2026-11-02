@@ -72,3 +72,4 @@ export function Badge({ children, variant = 'default', status, className, ...pro
     </span>
   );
 }
+
