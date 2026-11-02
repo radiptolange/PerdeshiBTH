@@ -9,19 +9,41 @@ export function getDb(): DatabaseSync {
     return dbInstance;
   }
 
-  const dbDir = path.join(process.cwd(), 'data');
-  if (!fs.existsSync(dbDir)) {
-    fs.mkdirSync(dbDir, { recursive: true });
+  const isVercel = Boolean(process.env.VERCEL);
+  let dbPath: string;
+
+  if (isVercel) {
+    // Vercel serverless functions have a read-only root, only /tmp is writable
+    const tmpDir = '/tmp';
+    dbPath = path.join(tmpDir, 'bth_esports.db');
+
+    const sourceDb = path.join(process.cwd(), 'data', 'bth_esports.db');
+    if (!fs.existsSync(dbPath) && fs.existsSync(sourceDb)) {
+      try {
+        fs.copyFileSync(sourceDb, dbPath);
+      } catch (err) {
+        console.warn('Failed to copy seeded db to /tmp, will initialize from schema:', err);
+      }
+    }
+  } else {
+    const dbDir = path.join(process.cwd(), 'data');
+    if (!fs.existsSync(dbDir)) {
+      fs.mkdirSync(dbDir, { recursive: true });
+    }
+    dbPath = path.join(dbDir, 'bth_esports.db');
   }
 
-  const dbPath = path.join(dbDir, 'bth_esports.db');
   dbInstance = new DatabaseSync(dbPath);
 
   // Initialize PRAGMAs
   dbInstance.exec('PRAGMA foreign_keys = ON;');
-  dbInstance.exec('PRAGMA journal_mode = WAL;');
+  try {
+    dbInstance.exec('PRAGMA journal_mode = WAL;');
+  } catch {
+    // Ignore if WAL mode is not supported on certain storage
+  }
 
-  // Read and execute schema
+  // Read and execute schema if needed
   const schemaPath = path.join(process.cwd(), 'src', 'lib', 'schema.sql');
   if (fs.existsSync(schemaPath)) {
     const schemaSql = fs.readFileSync(schemaPath, 'utf8');
@@ -64,4 +86,3 @@ export function transaction<T>(callback: () => T): T {
     throw err;
   }
 }
-
