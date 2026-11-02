@@ -3,6 +3,9 @@
   "version": "2.0.0",
   "private": true,
   "description": "BTH Esports Tournament & Bracket Management Platform",
+  "engines": {
+    "node": ">=22.5.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
